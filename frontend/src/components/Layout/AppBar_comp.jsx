@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useNavigate } from 'react-router-dom';  // 引入useNavigate
+import { useNavigate, Link  } from 'react-router-dom';  // 引入useNavigate
 
 const drawerWidth = 240;
 
@@ -51,12 +51,14 @@ export default function AppBar_comp({ open, handleDrawerOpen }) {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          NSG Technology INC.
-        </Typography>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Typography variant="h6" noWrap component="div">
+            NSG Technology INC.
+          </Typography>
+        </Link>
         <div style={{ flexGrow: 1 }}></div>
         <Typography variant="h6" noWrap component="div">
-          We make a better Future!
+          We make a Better Future!
         </Typography>
         <div style={{ flexGrow: 1 }}></div>
         <Button color="inherit" sx={{ justifyContent: "flex-start" }}>

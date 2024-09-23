@@ -1,5 +1,6 @@
 import Dashboard from '../pages/Dashboard';
 import ProtectedRoute from '../components/ProtectedRoute';
+import Tab_t from '../pages/Tab_t'
 
 const dashboardRoutes = [
   {
@@ -22,7 +23,7 @@ const dashboardRoutes = [
     path: '/Dashboard/Stats',
     element: (
       <ProtectedRoute>
-        <h1>Hi Stats</h1>
+        <Tab_t/>
       </ProtectedRoute>
     ),
   },

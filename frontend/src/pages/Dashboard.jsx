@@ -220,7 +220,7 @@ const data = [
     y1: 330.72,
     y2: 488.06,
   },
-];
+];  
 
 
 function CustomToolbar() {
