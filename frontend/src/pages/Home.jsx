@@ -36,6 +36,7 @@ function Home() {
         api
             .post("/api/notes/", { content, title })
             .then((res) => {
+                console.log(res)
                 if (res.status === 201) alert("Note created!");
                 else alert("Failed to make note.");
                 getNotes();

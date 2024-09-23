@@ -11,6 +11,7 @@ api.interceptors.request.use(
         if (token) {
             config.headers.Authorization = `Bearer ${token}`
         }
+        // localStorage.setItem("user", "dog")
         return config
     },
     (error) => {

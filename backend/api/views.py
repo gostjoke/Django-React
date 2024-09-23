@@ -3,17 +3,18 @@ from django.contrib.auth.models import User
 from rest_framework import generics
 from .serializers import UserSerializer, NoteSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
-
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 from .models import Note       
 
 class NoteListCreate(generics.ListCreateAPIView):
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
-    # authentication_classes = [JWTAuthentication]
+    authentication_classes = [JWTAuthentication]
 
     def get_queryset(self):
         user = self.request.user
+        # print(self.request.user)
         return Note.objects.filter(author=user)
     
     def perform_create(self, serializer):
@@ -25,6 +26,8 @@ class NoteListCreate(generics.ListCreateAPIView):
 class NoteDelete(generics.DestroyAPIView):
     serializer_class = NoteSerializer
     permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    
     def get_queryset(self):
         user = self.request.user
         return Note.objects.filter(author=user)
