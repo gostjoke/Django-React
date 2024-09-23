@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate, Link  } from 'react-router-dom';  // 引入useNavigate
+import TimeClock from './TimeClock'
 
 const drawerWidth = 240;
 
@@ -60,6 +61,8 @@ export default function AppBar_comp({ open, handleDrawerOpen }) {
         <Typography variant="h6" noWrap component="div">
           We make a Better Future!
         </Typography>
+        <div style={{ flexGrow: 1 }}></div>
+        <TimeClock/>
         <div style={{ flexGrow: 1 }}></div>
         <Button color="inherit" sx={{ justifyContent: "flex-start" }}>
           {localStorage.getItem('user')}

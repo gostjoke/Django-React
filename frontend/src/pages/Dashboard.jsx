@@ -283,7 +283,7 @@ export default function DataGridDemo() {
             },
             '& .MuiDataGrid-columnHeader': {
               borderRight: '1px solid #888', // 設置每個列標題的右邊框
-              backgroundColor: '#f5f5f5', // 調整標題背景色
+              // backgroundColor: '#f5f5f5', // 調整標題背景色
             },
             '& .MuiDataGrid-columnHeaders': {
               borderBottom: '1px solid #333', // 設置整個標題行的底部邊框
