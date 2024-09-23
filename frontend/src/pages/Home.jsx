@@ -53,7 +53,7 @@ function Home() {
         </div>
         <h2>Create a Note</h2>
         <form onSubmit={createNote}>
-            <label htmlFor="">Title: </label>
+            <label htmlFor="" style={{color:"Red"}}>Title: </label>
             <br />
             <input 
                 type="text" 
@@ -63,7 +63,7 @@ function Home() {
                 onChange={(e) => setTitle(e.target.value)}
                 value ={title} 
             />
-            <label htmlFor="content">Content:</label>
+            <label htmlFor="content" style={{color:"Red"}} >Content:</label>
             <br />
             <textarea 
                 id="content" 
