@@ -24,7 +24,7 @@ function Form({ route, method }) {
 
     // 生成四位數的隨機驗證碼
     const generateCaptcha = () => {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; // 字母和數字的集合
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // 字母和數字的集合
         let randomCaptcha = '';
         
         // 生成隨機的四個字母或數字
@@ -93,12 +93,12 @@ function Form({ route, method }) {
         e.preventDefault();
         setLoading(true);
 
-        // 驗證四位數字驗證碼
-        if (userCaptchaInput !== captcha) {
-            setCaptchaError("Wrong!! Please use your Eyes if you are not blind.");
-            setLoading(false);
-            return;
-        }
+        // // 驗證四位數字驗證碼
+        // if (userCaptchaInput !== captcha) {
+        //     setCaptchaError("Wrong!! Please use your Eyes if you are not blind.");
+        //     setLoading(false);
+        //     return;
+        // }
 
         try {
             const res = await api.post(route, { username, password });

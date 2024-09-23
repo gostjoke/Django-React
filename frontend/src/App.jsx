@@ -7,14 +7,18 @@ import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout/Layout";
 import Home2 from "./pages/Home2";
 import dashboardRoutes from './routers/dashboardRoutes';  // 引入 Dashboard 模块的路由
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>} 
+          />
           {/* 动态加载 Dashboard 的路由 */}
           {dashboardRoutes.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />
